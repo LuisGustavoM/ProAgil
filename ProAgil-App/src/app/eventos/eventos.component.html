@@ -1,3 +1,5 @@
+<br>
+<app-titulo [titulo]="titulo"></app-titulo>
 <div class="d-flex">
   <div class="form-inline mr-auto">
     <div class="Form-group mb-2">
@@ -8,11 +10,11 @@
   <div>
     <button class="btn btn-outline-primary" (click)="novoEvento(template)">
       <i class="fa fa-plus-circle"></i>&nbsp;
-      Novo Evento
+      <strong>Novo Evento</strong>
     </button>
   </div>
 </div>
-<h5>Filtro: {{filtroLista}}</h5>
+<h6>Filtro: {{filtroLista}}</h6>
 <table class="table table-dark">
   <thead class="thead-ligth">
     <tr>
@@ -33,7 +35,7 @@
       <th>
       <th>Lote
       <th>
-      <th>Opçoes</th>
+
     </tr>
   </thead>
   <tbody *ngIf="eventosFiltrados && eventosFiltrados.length">
@@ -44,7 +46,7 @@
       </td>
       <td>{{evento.id}}
       <td>
-      <td>{{evento.tema}}
+      <td><li>{{evento.tema}}</li>
       <td>
       <td>{{evento.local}}
       <td>
@@ -73,7 +75,7 @@
       </td>
     </tr>
   </tbody>
-  <tfoot *ngIf="!eventosFiltrados || !eventosFiltrados.length">
+  <tfoot *ngIf="!eventos">
     <tr>
       <td colspan="7" class="text-center">
         <h4>
@@ -87,7 +89,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 id="dialog-sizes-name1" class="modal-title pull-left">Cadastro Novo Evento</h4>
+        <h5 id="dialog-sizes-name1" class="modal-title pull-left"><b>Cadastro Novo Evento</b></h5>
         <button type="button" class="close pull-right" (click)="template.hide()" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -126,7 +128,10 @@
             </div>
             <div class="form-group col-md-4">
               <label>Data e Hora</label>
-              <input type="datetime-local" class="form-control" [ngClass]="{'is-invalid': registerForm.get('dataEvento').errors
+              <input type= "text" class="form-control"
+              bsDatepicker
+              [bsConfig]=" { dateInputFormat: 'DD/MM/YYYY hh:mm' }" 
+              [ngClass]="{'is-invalid': registerForm.get('dataEvento').errors
               && registerForm.get('local').touched}" formControlName="dataEvento" placeholder="">
               <div *ngIf="registerForm.get('dataEvento').hasError('required') 
               && registerForm.get('dataEvento').touched" class="invalide-feedback">

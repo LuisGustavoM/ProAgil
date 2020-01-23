@@ -2,7 +2,8 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { EventoService } from '../_services/evento.service';
 import { Evento } from '../_models/Evento';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-eventos',
@@ -11,6 +12,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class EventosComponent implements OnInit {
 
+  titulo = 'Eventos';
   eventosFiltrados: Evento[];
   eventos: Evento[];
 
@@ -27,7 +29,8 @@ export class EventosComponent implements OnInit {
   constructor(
     private eventoService: EventoService,
     private modalService: BsModalService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService
     ) { }
 
   get filtroLista(): string  {
@@ -61,7 +64,9 @@ export class EventosComponent implements OnInit {
       () => {
           template.hide();
           this.getEventos();
+          this.toastr.success('Deletado com Sucesso');
         }, error => {
+          this.toastr.error('Erro ao tentar Deletar');
           console.log(error);
         }
     );
@@ -108,8 +113,9 @@ export class EventosComponent implements OnInit {
           (novoEvento: Evento) => {
             template.hide();
             this.getEventos();
+            this.toastr.success('Inserido com Sucesso');
           }, error => {
-            console.log(error);
+            this.toastr.error('Erro ao Inserir: ${error}, reporte ao administrador');
           }
         );
       } else {
@@ -119,8 +125,9 @@ export class EventosComponent implements OnInit {
         () => {
           template.hide();
           this.getEventos();
+          this.toastr.success('Editado com Sucesso');
         }, error => {
-          console.log(error.error);
+          this.toastr.error('Erro ao Editar: ${error}, reporte ao administrador');
         }
       );
       }
@@ -134,7 +141,8 @@ export class EventosComponent implements OnInit {
     this.eventos = _eventos;
     this.eventosFiltrados = this.eventos;
     }, error => {
-      console.log(error);
+      this.toastr.success('Erro ao Tentar Carregar Eventos');
+
   });
 
   }
