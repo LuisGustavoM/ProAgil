@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { EventoService } from '../_services/evento.service';
+import { Evento } from '../_models/Evento';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-eventos',
@@ -8,20 +11,133 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EventosComponent implements OnInit {
 
-  eventos: any;
-  constructor(private Http: HttpClient) { }
+  eventosFiltrados: Evento[];
+  eventos: Evento[];
+
+  evento: Evento;
+  modoSalvar = 'post';
+
+  imagemLargura = 50;
+  ImagemMargem = 2;
+  mostrarImagem = false;
+  registerForm: FormGroup;
+  bodyDeletarEvento = '';
+  _filtroLista = '';
+
+  constructor(
+    private eventoService: EventoService,
+    private modalService: BsModalService,
+    private fb: FormBuilder
+    ) { }
+
+  get filtroLista(): string  {
+    return this._filtroLista;
+  }
+  set filtroLista(value: string) {
+    this._filtroLista = value;
+    this.eventosFiltrados = this.filtroLista ? this.filtrarEventos(this.filtroLista) : this.eventos;
+  }
+
+  editarEvento(evento: Evento, template: any ) {
+    this.modoSalvar = 'put';
+    this.openModal(template);
+    this.evento = evento;
+    this.registerForm.patchValue(evento);
+
+  }
+  novoEvento(template: any) {
+    this.modoSalvar = 'post';
+    this.openModal(template);
+  }
+
+  excluirEvento(evento: Evento, template: any) {
+    this.openModal(template);
+    this.evento = evento;
+    this.bodyDeletarEvento = `Tem certeza que deseja excluir o Evento: ${evento.tema}, Código: ${evento.id}`;
+  }
+
+  confirmeDelete(template: any) {
+    this.eventoService.deleteEvento(this.evento.id).subscribe(
+      () => {
+          template.hide();
+          this.getEventos();
+        }, error => {
+          console.log(error);
+        }
+    );
+  }
+
+    openModal( template: any) {
+      this.registerForm.reset();
+      template.show();
+    }
 
   ngOnInit() {
+    this. validation();
     this.getEventos();
   }
 
-  getEventos() {
-    this.eventos = this.Http.get('http://localhost:5000/api/values').subscribe
-    (response => {this.eventos = response;
-      console.log(response);
-    }, error => {
-    console.log(error);
+  filtrarEventos(filtrarPor: string): Evento[] {
+    console.log(filtrarPor);
+    filtrarPor = filtrarPor.toLocaleLowerCase();
+    return this.eventos.filter(evento => evento.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1);
+  }
+
+  alternarImagem() {
+    this.mostrarImagem = !this.mostrarImagem;
+  }
+
+
+  validation() {
+    this.registerForm = this.fb.group({
+      tema: [ '', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      local: [ '', Validators.required],
+      dataEvento: [ '', Validators.required],
+      qtdPessoas: [ '', [Validators.required, Validators.max(1500)]],
+      imagemURL: [ '', Validators.required],
+      telefone: [ '', Validators.required],
+      email: [ '', [Validators.required, Validators.email]]
   });
 }
+
+  salvarAlteracao(template: any) {
+    if (this.registerForm.valid) {
+      if (this.modoSalvar === 'post') {
+        this.evento = Object.assign(this.registerForm.value, {id : 0});
+        this.eventoService.postEvento(this.evento).subscribe(
+          (novoEvento: Evento) => {
+            template.hide();
+            this.getEventos();
+          }, error => {
+            console.log(error);
+          }
+        );
+      } else {
+        this.evento = Object.assign( this.registerForm.value, {id: this.evento.id});
+        console.log(this.evento);
+        this.eventoService.putEvento(this.evento).subscribe(
+        () => {
+          template.hide();
+          this.getEventos();
+        }, error => {
+          console.log(error.error);
+        }
+      );
+      }
+    }
+  }
+
+ getEventos() {
+    this.eventoService.getAllEventos().subscribe(
+    (_eventos: Evento[]) => {
+    this.eventos = [];
+    this.eventos = _eventos;
+    this.eventosFiltrados = this.eventos;
+    }, error => {
+      console.log(error);
+  });
+
+  }
+
 }
 

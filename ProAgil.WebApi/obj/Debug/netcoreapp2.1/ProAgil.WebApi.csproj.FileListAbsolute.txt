@@ -12,3 +12,8 @@ C:\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.AssemblyInfo
 C:\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.RazorTargetAssemblyInfo.cache
 C:\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.dll
 C:\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.pdb
+C:\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Domain.dll
+C:\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Repository.dll
+C:\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Domain.pdb
+C:\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Repository.pdb
+C:\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.csproj.CopyComplete

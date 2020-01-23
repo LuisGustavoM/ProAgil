@@ -1,0 +1,12 @@
+C:\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Repository.deps.json
+C:\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Repository.dll
+C:\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Repository.pdb
+C:\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Domain.dll
+C:\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Domain.pdb
+C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.csprojAssemblyReference.cache
+C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.csproj.CoreCompileInputs.cache
+C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.AssemblyInfoInputs.cache
+C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.AssemblyInfo.cs
+C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.csproj.CopyComplete
+C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.dll
+C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.pdb
