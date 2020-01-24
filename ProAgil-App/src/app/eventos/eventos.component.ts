@@ -15,22 +15,24 @@ export class EventosComponent implements OnInit {
   titulo = 'Eventos';
   eventosFiltrados: Evento[];
   eventos: Evento[];
-
+  file: File;
   evento: Evento;
   modoSalvar = 'post';
-
   imagemLargura = 50;
   ImagemMargem = 2;
   mostrarImagem = false;
   registerForm: FormGroup;
   bodyDeletarEvento = '';
+  dataAtual: string;
+  // tslint:disable-next-line: variable-name
   _filtroLista = '';
+  fileNameToUpdate: string;
 
   constructor(
     private eventoService: EventoService,
     private modalService: BsModalService,
     private fb: FormBuilder,
-    private toastr: ToastrService
+    private toastrService: ToastrService
     ) { }
 
   get filtroLista(): string  {
@@ -44,8 +46,10 @@ export class EventosComponent implements OnInit {
   editarEvento(evento: Evento, template: any ) {
     this.modoSalvar = 'put';
     this.openModal(template);
-    this.evento = evento;
-    this.registerForm.patchValue(evento);
+    this.evento = Object.assign({}, evento);
+    this.fileNameToUpdate = evento.imagemURL.toString();
+    this.evento.imagemURL = '';
+    this.registerForm.patchValue(this.evento);
 
   }
   novoEvento(template: any) {
@@ -64,15 +68,15 @@ export class EventosComponent implements OnInit {
       () => {
           template.hide();
           this.getEventos();
-          this.toastr.success('Deletado com Sucesso');
+          this.toastrService.success('Deletado com Sucesso');
         }, error => {
-          this.toastr.error('Erro ao tentar Deletar');
+          this.toastrService.error('Erro ao tentar Deletar');
           console.log(error);
         }
     );
   }
 
-    openModal( template: any) {
+  openModal( template: any) {
       this.registerForm.reset();
       template.show();
     }
@@ -104,30 +108,65 @@ export class EventosComponent implements OnInit {
       email: [ '', [Validators.required, Validators.email]]
   });
 }
+  onFileChange(event) {
+   const reader = new FileReader();
+   if (event.target.files && event.target.files.length) {
+     this.file = event.target.files;
+     console.log(this.file);
+   }
+  }
+
+  uploadImagem() {
+    if ( this.modoSalvar === 'post') {
+      const nomeArquivo = this.evento.imagemURL.split('\\', 3);
+      this.evento.imagemURL = nomeArquivo[2];
+      this.eventoService.postUpload(this.file, nomeArquivo[2]).
+      subscribe(
+        () => {
+          this.dataAtual = new Date().getMilliseconds().toString();
+          this.getEventos();
+        }
+      );
+
+    } else {
+      this.evento.imagemURL = this.fileNameToUpdate;
+      this.eventoService.postUpload(this.file, this.fileNameToUpdate).
+      subscribe(
+        () => {
+          this.dataAtual = new Date().getMilliseconds().toString();
+          this.getEventos();
+        }
+      );
+
+  }
+}
 
   salvarAlteracao(template: any) {
     if (this.registerForm.valid) {
       if (this.modoSalvar === 'post') {
-        this.evento = Object.assign(this.registerForm.value, {id : 0});
+        this.evento = Object.assign(this.registerForm.value);
+
+        this.uploadImagem();
+
         this.eventoService.postEvento(this.evento).subscribe(
-          (novoEvento: Evento) => {
+          (novPoEvento: Evento) => {
             template.hide();
             this.getEventos();
-            this.toastr.success('Inserido com Sucesso');
+            this.toastrService.success('Inserido com Sucesso');
           }, error => {
-            this.toastr.error('Erro ao Inserir: ${error}, reporte ao administrador');
+            this.toastrService.error('Erro ao Inserir: ${error}, reporte ao administrador');
           }
         );
       } else {
         this.evento = Object.assign( this.registerForm.value, {id: this.evento.id});
-        console.log(this.evento);
+        this.uploadImagem();
         this.eventoService.putEvento(this.evento).subscribe(
         () => {
           template.hide();
           this.getEventos();
-          this.toastr.success('Editado com Sucesso');
+          this.toastrService.success('Editado com Sucesso');
         }, error => {
-          this.toastr.error('Erro ao Editar: ${error}, reporte ao administrador');
+          this.toastrService.error('Erro ao Editar: ${error}, reporte ao administrador');
         }
       );
       }
@@ -136,12 +175,13 @@ export class EventosComponent implements OnInit {
 
  getEventos() {
     this.eventoService.getAllEventos().subscribe(
+    // tslint:disable-next-line: variable-name
     (_eventos: Evento[]) => {
     this.eventos = [];
     this.eventos = _eventos;
     this.eventosFiltrados = this.eventos;
     }, error => {
-      this.toastr.success('Erro ao Tentar Carregar Eventos');
+      this.toastrService.success('Erro ao Tentar Carregar Eventos');
 
   });
 

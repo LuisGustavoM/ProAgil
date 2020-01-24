@@ -21,6 +21,7 @@ import { TituloComponent} from './_shared/titulo/titulo.component';
 
 import { DateTimeFormatPipePipe } from './_helps/DateTimeFormatPipe.pipe';
 import { from } from 'rxjs';
+import { PlatformLocation } from '@angular/common';
 
 
 
@@ -41,8 +42,8 @@ import { from } from 'rxjs';
       BsDropdownModule.forRoot(),
       TooltipModule.forRoot(),
       ModalModule.forRoot(),
-      BrowserAnimationsModule,
       ToastrModule.forRoot(),
+      BrowserAnimationsModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
@@ -53,7 +54,7 @@ import { from } from 'rxjs';
       BsModalService
    ],
    bootstrap: [
-      AppComponent
+      AppComponent,
    ]
 })
 export class AppModule { }
