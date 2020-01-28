@@ -22,6 +22,9 @@ import { TituloComponent} from './_shared/titulo/titulo.component';
 import { DateTimeFormatPipePipe } from './_helps/DateTimeFormatPipe.pipe';
 import { from } from 'rxjs';
 import { PlatformLocation } from '@angular/common';
+import { UserComponent } from './User/User.component';
+import { LoginComponent } from './user/login/login.component';
+import { RegistrationComponent } from './user/registration/registration.component';
 
 
 
@@ -34,7 +37,10 @@ import { PlatformLocation } from '@angular/common';
       ContatosComponent,
       DashboardComponent,
       PalestrantesComponent,
-      TituloComponent
+      TituloComponent,
+      UserComponent,
+      RegistrationComponent,
+      LoginComponent
    ],
    imports: [
       BrowserModule,
@@ -54,7 +60,7 @@ import { PlatformLocation } from '@angular/common';
       BsModalService
    ],
    bootstrap: [
-      AppComponent,
+      AppComponent
    ]
 })
 export class AppModule { }
