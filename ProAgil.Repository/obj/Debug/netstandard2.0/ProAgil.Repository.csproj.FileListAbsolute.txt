@@ -10,3 +10,14 @@ C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.Ass
 C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.csproj.CopyComplete
 C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.dll
 C:\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.pdb
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Repository.deps.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Repository.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Repository.pdb
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Domain.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\bin\Debug\netstandard2.0\ProAgil.Domain.pdb
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.csprojAssemblyReference.cache
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.AssemblyInfoInputs.cache
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.AssemblyInfo.cs
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.csproj.CopyComplete
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Repository\obj\Debug\netstandard2.0\ProAgil.Repository.pdb

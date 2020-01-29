@@ -17,3 +17,25 @@ C:\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Repository.dll
 C:\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Domain.pdb
 C:\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Repository.pdb
 C:\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.csproj.CopyComplete
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\package-lock.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.WebApi.deps.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.WebApi.runtimeconfig.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.WebApi.runtimeconfig.dev.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.WebApi.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.WebApi.pdb
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Domain.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Repository.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Domain.pdb
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\bin\Debug\netcoreapp2.1\ProAgil.Repository.pdb
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.csprojAssemblyReference.cache
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.RazorAssemblyInfo.cache
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.RazorAssemblyInfo.cs
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.AssemblyInfoInputs.cache
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.AssemblyInfo.cs
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.csproj.CopyComplete
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.WebApi\obj\Debug\netcoreapp2.1\ProAgil.WebApi.pdb

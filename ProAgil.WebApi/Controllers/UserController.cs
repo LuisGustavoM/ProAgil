@@ -70,18 +70,18 @@ namespace ProAgil.WebApi.Controllers
 
         [HttpPost("Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(UserLoginDto userLogin)
+        public async Task<IActionResult> Login(UserLoginDto UserLogin)
         {
            try
            {
-               var user = await _userManager.FindByNameAsync(userLogin.UserName);
+               var user = await _userManager.FindByNameAsync(UserLogin.UserName);
                var result = await _signInManager.CheckPasswordSignInAsync
-                                    (user, userLogin.PasswordHash,false);
+                                    (user, UserLogin.PasswordHash,false);
 
                 if( result.Succeeded)
                 {
                     var appUser = await _userManager.Users.FirstOrDefaultAsync
-                    (u => u.NormalizedUserName == userLogin.UserName.ToUpper());
+                    (u => u.NormalizedUserName == UserLogin.UserName.ToUpper());
                     
                     var userToReturn = _mapper.Map<UserLoginDto>(appUser);
 
@@ -96,10 +96,11 @@ namespace ProAgil.WebApi.Controllers
            {
                 return this.StatusCode (StatusCodes.Status500InternalServerError, 
                 $"PROBLEMA AQUI  {ex.ToString()}");
+                
 
            }
         }
-
+        
         private async Task<string> GenerateJwToken(User user)
         {
             var claims = new List<Claim>

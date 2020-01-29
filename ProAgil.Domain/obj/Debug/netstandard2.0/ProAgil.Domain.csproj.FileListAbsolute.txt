@@ -7,3 +7,11 @@ C:\DotnetCore\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.dll
 C:\DotnetCore\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.pdb
 C:\DotnetCore\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.dll
 C:\DotnetCore\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.pdb
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.deps.json
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.pdb
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.csprojAssemblyReference.cache
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.AssemblyInfoInputs.cache
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.AssemblyInfo.cs
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.dll
+C:\Users\LUIS GUSTAVO\Desktop\Projetos\Desenvolvimento\DotnetCore\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.pdb
