@@ -62,8 +62,8 @@ export class RegistrationComponent implements OnInit {
               this.toastr.success('Cadastrado Realizado!');
             }, error => {
               const erro = error.error;
-              console.log(erro);
-              erro.forEach(element  => {
+              console.log(error);
+              error.forEach(element  => {
                 switch (element.code) {
                   case 'DuplicateUserName':
                     this.toastr.error('Você ja possui um cadastro com este usuario, tente redefinir a senha');

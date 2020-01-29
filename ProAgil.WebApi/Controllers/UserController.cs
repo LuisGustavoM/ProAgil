@@ -45,7 +45,7 @@ namespace ProAgil.WebApi.Controllers
         }
 
         [HttpPost("Registro")]
-         [AllowAnonymous]
+        [AllowAnonymous]
         public async Task<IActionResult> Registro(UserDto userDto)
         {
           try
@@ -122,7 +122,7 @@ namespace ProAgil.WebApi.Controllers
 
             var tokenDescriptor = new SecurityTokenDescriptor{
                  Subject = new ClaimsIdentity(claims),
-                 Expires = DateTime.UtcNow.AddMinutes(10),
+                 Expires = DateTime.UtcNow.AddYears(001),
                  SigningCredentials = creds
             };
 

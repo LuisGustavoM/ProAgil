@@ -13,6 +13,9 @@
         "packagesPath": "C:\\Users\\LUIS GUSTAVO\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\LUIS GUSTAVO\\Desktop\\Projetos\\Desenvolvimento\\DotnetCore\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\LUIS GUSTAVO\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -70,6 +73,9 @@
         "packagesPath": "C:\\Users\\LUIS GUSTAVO\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\LUIS GUSTAVO\\Desktop\\Projetos\\Desenvolvimento\\DotnetCore\\ProAgil.Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\LUIS GUSTAVO\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
@@ -139,6 +145,9 @@
         "packagesPath": "C:\\Users\\LUIS GUSTAVO\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\LUIS GUSTAVO\\Desktop\\Projetos\\Desenvolvimento\\DotnetCore\\ProAgil.WebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\LUIS GUSTAVO\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],

@@ -49,7 +49,7 @@
       <div formGroupName="passwords">
         <div class="form-group">
           <label for="">Senha:</label>
-          <input class="form-control" type="passwordHash" formControlName="passwordHash"
+          <input class="form-control" type="password" formControlName="passwordHash"
             [ngClass]="{ 'is-invalid': registerForm.get('passwords.passwordHash').errors &&
                                        registerForm.get('passwords.passwordHash').touched}"
             placeholder="Digite uma Senha" />

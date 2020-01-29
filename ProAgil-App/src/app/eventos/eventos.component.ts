@@ -145,11 +145,9 @@ export class EventosComponent implements OnInit {
     if (this.registerForm.valid) {
       if (this.modoSalvar === 'post') {
         this.evento = Object.assign(this.registerForm.value);
-
         this.uploadImagem();
-
         this.eventoService.postEvento(this.evento).subscribe(
-          (novPoEvento: Evento) => {
+          (novoEvento: Evento) => {
             template.hide();
             this.getEventos();
             this.toastrService.success('Inserido com Sucesso');
@@ -177,11 +175,11 @@ export class EventosComponent implements OnInit {
     this.eventoService.getAllEventos().subscribe(
     // tslint:disable-next-line: variable-name
     (_eventos: Evento[]) => {
-    this.eventos = [];
     this.eventos = _eventos;
     this.eventosFiltrados = this.eventos;
     }, error => {
       this.toastrService.success('Erro ao Tentar Carregar Eventos');
+      console.log(error);
 
   });
 

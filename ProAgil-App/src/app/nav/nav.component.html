@@ -1,12 +1,12 @@
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" routerLink="dashboard">Home</a>
+    <a class="navbar-brand" routerLink="dashboard">Projeto Dotnet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
       aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div *ngIf="loggeIn()"collapse navbar-collapse id="navbarsExampleDefault">
+    <div *ngIf="loggedIn() == false"collapse navbar-collapse id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive ="active">
           <a class="nav-link" routerLink="eventos">Eventos</a>
@@ -20,22 +20,23 @@
       </ul>
     </div>
 
-    <ul *ngIf ="loggeIn()" class="navbar-nav">
-      <li class="nav-item dropdown" #dropdown>
-        <a #dropdownToggle class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Gustavo
+    <ul *ngIf="loggedIn() == false" class="navbar-nav">
+      <li class="nav-item dropdown" style="color: white;" dropdown>
+        <a dropdownToggle class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style= "cursor: pointer">
+          {{authService.decodedToken?.unique_name}}
         </a>
         <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item">
             Perfil
           </a>
           <div role="separator" class="divider"></div>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" (click)="logout()" style= "cursor: pointer">
             Sair
           </a>
         </div>
       </li>
     </ul>
+    <button *ngIf="loggedIn() == true" class="btn btn-success" (click)="entrar()">Entrar</button>
   </div>
 </nav>

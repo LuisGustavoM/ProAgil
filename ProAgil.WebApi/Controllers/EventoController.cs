@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.IO;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -27,6 +26,7 @@ namespace ProAgil.WebApi.Controllers {
 
         //Retorna Todos os eventos ( AUTO MAPPER FILTRANDO OS EVENTOS)
         [HttpGet]
+        
         public async Task<IActionResult> Get () {
             try {
                 var eventos = await _repo.GetAllEventoAsync (true);

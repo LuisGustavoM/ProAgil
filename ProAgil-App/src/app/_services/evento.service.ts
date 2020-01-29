@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Evento } from '../_models/Evento';
+import { ltLocale } from 'ngx-bootstrap';
 
 
 @Injectable({
@@ -15,7 +16,9 @@ export class EventoService {
 
 
   getAllEventos(): Observable<Evento[]> {
-    return this.http.get<Evento[]>(this.baseURL);
+    // tslint:disable-next-line: object-literal-key-quotes
+    const tokenHeader = new HttpHeaders({ Authorization: `Bearer ${localStorage.getItem('token')}`});
+    return this.http.get<Evento[]>(this.baseURL, {headers: tokenHeader });
   }
 
   getEventoByTema(tema: string): Observable<Evento[]> {

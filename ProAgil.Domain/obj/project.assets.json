@@ -3617,7 +3617,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LUIS GUSTAVO\\.nuget\\packages\\": {}
+    "C:\\Users\\LUIS GUSTAVO\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -3628,6 +3629,9 @@
       "packagesPath": "C:\\Users\\LUIS GUSTAVO\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\LUIS GUSTAVO\\Desktop\\Projetos\\Desenvolvimento\\DotnetCore\\ProAgil.Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\LUIS GUSTAVO\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],

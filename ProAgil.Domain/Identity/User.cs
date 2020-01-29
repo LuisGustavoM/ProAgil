@@ -7,7 +7,7 @@ using ProAgil.Domain.Identity;
 public class User : IdentityUser<int>
     {   
         [Column (TypeName ="nvarchar(150)")]
-        public string NomeCompleto  { get; set;}
+        public string nomeCompleto  { get; set;}
         public List<UserRole> UserRoles { get; set; }
 
 
