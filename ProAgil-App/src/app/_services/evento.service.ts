@@ -11,14 +11,15 @@ import { ltLocale } from 'ngx-bootstrap';
 
 export class EventoService {
   baseURL = 'http://localhost:5000/api/evento';
+  tokenHeader: HttpHeaders;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.tokenHeader = new HttpHeaders({ Authorization: `Bearer ${localStorage.getItem('token')}`});
+   }
 
 
   getAllEventos(): Observable<Evento[]> {
-    // tslint:disable-next-line: object-literal-key-quotes
-    const tokenHeader = new HttpHeaders({ Authorization: `Bearer ${localStorage.getItem('token')}`});
-    return this.http.get<Evento[]>(this.baseURL, {headers: tokenHeader });
+    return this.http.get<Evento[]>(this.baseURL, {headers: this.tokenHeader });
   }
 
   getEventoByTema(tema: string): Observable<Evento[]> {
@@ -35,11 +36,11 @@ export class EventoService {
     const fileToUpload = file[0] as File;
     const formData = new FormData();
     formData.append('file', fileToUpload, name);
-    return this.http.post(`${this.baseURL}/upload`, formData);
+    return this.http.post(`${this.baseURL}/upload`, formData, {headers: this.tokenHeader});
   }
 
   postEvento(evento: Evento) {
-    return this.http.post(this.baseURL, evento);
+    return this.http.post(this.baseURL, evento,  {headers: this.tokenHeader});
   }
     putEvento(evento: Evento) {
     return this.http.put(`${this.baseURL}/${evento.id}`, evento);

@@ -47,8 +47,8 @@ export class EventosComponent implements OnInit {
     this.modoSalvar = 'put';
     this.openModal(template);
     this.evento = Object.assign({}, evento);
-    this.fileNameToUpdate = evento.imagemURL.toString();
     this.evento.imagemURL = '';
+    this.fileNameToUpdate = evento.imagemURL.toString();
     this.registerForm.patchValue(this.evento);
 
   }
