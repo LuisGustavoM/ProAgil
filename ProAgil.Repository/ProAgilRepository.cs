@@ -32,6 +32,12 @@ namespace ProAgil.Repository
         {
              _context.Remove(entity);
         }
+
+        public void DeleteRange<T>(T entityArray) where T : class
+        {
+             _context.RemoveRange(entityArray);
+        }
+        
         
          public async Task<bool> SaveChangesAsync()
         {
@@ -123,6 +129,7 @@ namespace ProAgil.Repository
            if(includeEventos)
            {
                query = query
+               .AsNoTracking()
                .Include(pe => pe.PalestrantesEventos)
                .ThenInclude(e => e.Evento);
            }

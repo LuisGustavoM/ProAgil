@@ -23,21 +23,16 @@
           <i class="{{mostrarImagem ? 'fa fa-eye-slash': 'fa fa-eye' }}"></i>
         </button>
       </th>
-      <th>ID
-      <th>
-      <th>Tema
-      <th>
-      <th>Local
-      <th>
-      <th>Data
-      <th>
-      <th>Qtd Pessoas
-      <th>
-      <th>Lote
-      <th>
-
+      <th>ID<th>
+      <th>Tema<th>
+      <th>Local<th>
+      <th>Data<th>
+      <th>Qtd Pessoas<th>
+      <th>Lote<th>
+      <th colspan="2" class="text-center">Opções</th>
     </tr>
   </thead>
+  
   <tbody *ngIf="eventosFiltrados && eventosFiltrados.length">
     <tr *ngFor="let evento of eventosFiltrados">
       <td>
@@ -74,6 +69,11 @@
           </button>
         </div>
       </td>
+      <td>
+        <a [routerLink]= "['/evento', evento.id, 'edit']" tooltip="Edição Detalhada" class="btn btn-sm btn-warning">
+        <i class="far fa-edit"></i>
+        </a>
+      </td>
     </tr>
   </tbody>
   <tfoot *ngIf="!eventos">
@@ -100,8 +100,9 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <label>Tema</label>
-              <input type="text" class="form-control" [ngClass]="{'is-invalid': registerForm.get('tema').errors
-              && registerForm.get('tema').touched}" formControlName="tema" placeholder="Insira o Tema">
+              <input type="text" class="form-control"
+              [ngClass]="{'is-invalid': registerForm.get('tema').error && registerForm.get('tema').touched}"
+            formControlName="tema" placeholder="Insira o Tema">
               <div *ngIf="registerForm.get('tema').hasError('required') && registerForm.get('tema').touched"
                 class="invalide-feedback">
                 Tema é Obrigatório!

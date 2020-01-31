@@ -32,4 +32,5 @@ export class NavComponent implements OnInit {
     this.router.navigate(['/user/login']);
   }
 
+
 }

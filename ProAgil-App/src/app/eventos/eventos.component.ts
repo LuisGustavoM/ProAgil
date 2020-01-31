@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EventosComponent implements OnInit {
 
+
   titulo = 'Eventos';
   eventosFiltrados: Evento[];
   eventos: Evento[];
@@ -172,6 +173,7 @@ export class EventosComponent implements OnInit {
   }
 
  getEventos() {
+    this.dataAtual = new Date().getMilliseconds().toString();
     this.eventoService.getAllEventos().subscribe(
     // tslint:disable-next-line: variable-name
     (_eventos: Evento[]) => {

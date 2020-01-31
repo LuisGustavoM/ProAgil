@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -141,12 +143,28 @@ namespace ProAgil.WebApi.Controllers {
         }
 
         [HttpDelete ("{EventoId}")]
-        public async Task<IActionResult> Delete (int EventoId) {
+        public async Task<IActionResult> Delete (int EventoId, EventoDto model) {
             try {
-                var evento = await _repo.GetAllEventoAsyncById (EventoId, false);
-                if(evento ==null) return NotFound();
 
-                _repo.Delete (evento);
+                var evento = await _repo.GetAllEventoAsyncById (EventoId, false);
+                if(evento == null) return NotFound();
+
+                var idLotes = new List<int> ();
+                var idRedesSociais = new List<int>();
+                
+                model.Lotes.ForEach(item => idLotes.Add(item.Id));
+                model.RedesSociais.ForEach(item => idRedesSociais.Add(item.Id));
+  
+                var lotes = evento.Lotes.Where(lote => !idLotes.Contains(lote.Id)).ToArray();
+                var RedesSociais = evento.RedesSociais.Where(rede => !idRedesSociais.Contains(rede.Id)).ToArray();
+
+                if(lotes.Length > 0)  _repo.DeleteRange(lotes);
+                   
+                if(RedesSociais.Length > 0) _repo.DeleteRange(RedesSociais);
+
+                _mapper.Map(model,evento);
+
+                _repo.Update (evento);
 
                 if (await _repo.SaveChangesAsync ()) {
 

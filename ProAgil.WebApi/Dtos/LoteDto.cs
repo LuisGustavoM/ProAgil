@@ -4,7 +4,7 @@ namespace ProAgil.WebApi.Dtos
 {
     public class LoteDto
     {
-        public string Id { get; set; }   
+        public int Id { get; set; }   
         [Required]
         public string Nome { get; set; }    
 
